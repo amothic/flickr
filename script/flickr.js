@@ -11,5 +11,7 @@ $(function() {
 });
 
 function drawImg(result) {
-    $("#resultArea").append($('<img>').attr({src: result.items[0].media.m}));
+    $.each(result.items, function(){
+        $("#resultArea").append($('<img>').attr({src: this.media.m}));
+    });
 }
